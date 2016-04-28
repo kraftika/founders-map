@@ -20,4 +20,4 @@ Display all startups on interactive map
   * bower install
   * grunt
 
-*Note: Install node.js to runt he application*
+*Note: Install node.js to run the application*

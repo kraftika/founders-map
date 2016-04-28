@@ -1,0 +1,19 @@
+{
+  "name": "founders",
+  "description": "Display markers lables on interactive map",
+  "main": "index.js",
+  "authors": [
+    "Ionut Pistol ionut.pistol@gmail.com"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/tzupoaia/founders-map",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

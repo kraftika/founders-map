@@ -5,7 +5,16 @@
   <title>Founders map</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
-<body>
+<body ng-app="founders">
   <h1>Hello founders</h1>
+  <p>The result is  difxxferent in every page {{ 3+4 }}</p>
+
+  <div ui-view></div>
+
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+  <script src="app.js"></script>
+  <script src="mainController.js"></script>
 </body>
 </html>

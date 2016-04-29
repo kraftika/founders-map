@@ -1,27 +1,72 @@
 <p>This is the main template. Result is {{ 1+3 }}.</p>
-
+<div class="input-group">
+  <span class="input-group-addon" id="sizing-addon2">
+    <i class="glyphicon glyphicon-search"></i>
+  </span>
+  <input ng-model="search" type="text" class="form-control" placeholder="Search for..." aria-describedby="sizing-addon1">
+</div>
 <div class="table-responsive">
-  <table class="table table hover">
+  <table class="table table-hover">
     <thead>
-      <th>Id</th>
-      <th>Company Name</th>
-      <th>City</th>
-      <th>Country</th>
-      <th>Postal Code</th>
-      <th>Street</th>
-      <th>Photo</th>
-      <th>Home Page</th>
+      <th>
+        <a href="#" ng-click="sortField = 'id'; sortReverse = !sortReverse">Id
+          <span>
+            <i ng-show="sortField == 'id' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+            <i ng-show="sortField == 'id' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+          </span>
+        </a>
+      </th>
+      <th></th>
+      <th>
+        <a href="#" ng-click="sortField = 'companyName'; sortReverse = !sortReverse">Company Name
+          <span>
+            <i ng-show="sortField == 'companyName' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+            <i ng-show="sortField == 'companyName' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+          </span>
+        </a>
+      </th>
+      <th>
+        <a href="#" ng-click="sortField = 'city'; sortReverse = !sortReverse">City
+          <span>
+            <i ng-show="sortField == 'city' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+            <i ng-show="sortField == 'city' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+          </span>
+        </a>
+      </th>
+      <th>
+        <a href="#" ng-click="sortField = 'country'; sortReverse = !sortReverse">Country
+          <span>
+            <i ng-show="sortField == 'country' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+            <i ng-show="sortField == 'country' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+          </span>
+        </a>
+      </th>
+      <th>
+        <a href="#" ng-click="sortField = 'postalCode'; sortReverse = !sortReverse">Postal Code
+          <span>
+            <i ng-show="sortField == 'postalCode' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+            <i ng-show="sortField == 'postalCode' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+          </span>
+        </a>
+      </th>
+      <th>
+        <a href="#" ng-click="sortField = 'street'; sortReverse = !sortReverse">Street
+          <span>
+            <i ng-show="sortField == 'street' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+            <i ng-show="sortField == 'street' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+          </span>
+        </a>
+      </th>
     </thead>
     <tbody>
-      <tr ng-repeat="founder in founders">
+      <tr ng-repeat="founder in founders | filter:search | orderBy:sortField:sortReverse">
         <td>{{founder.id}}</td>
-        <td>{{founder.companyName}}</td>
+        <td><img ng-src="{{founder.photo}}" class="img-rounded" width="100" height="70"></td>
+        <td><a ng-href="{{founder.homePage}}" target="_blank">{{founder.companyName}}</a></td>
         <td>{{founder.city}}</td>
         <td>{{founder.country}}</td>
         <td>{{founder.postalCode}}</td>
         <td>{{founder.street}}</td>
-        <td>{{founder.photo}}</td>
-        <td>{{founder.homePage}}</td>
       </tr>
     </tbody>
   </table>

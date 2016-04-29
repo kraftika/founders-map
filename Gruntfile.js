@@ -73,7 +73,8 @@ module.exports = function(grunt) {
     watch: {
       files: [
         'Gruntfile.js',
-        'app/**'
+        'app/**',
+        'bower.json'
         ],
       tasks: ['jshint'],
       livereload: {

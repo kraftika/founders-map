@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('founders', ['ui.router'])
+angular.module('founders', ['ui.router', 'ngFileUpload', 'ui.bootstrap'])
   .config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
     function($stateProvider, $urlRouterProvider, $httpProvider) {
       $urlRouterProvider.otherwise('/');

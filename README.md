@@ -1,7 +1,7 @@
 # Founders-map
 Display all startups on interactive map
 
-# Required features
+# Features
   * Load the csv file from specific location
   * File contains information regarding company, founder, city, country, latitudine/longitude etc.
   * The input file is displayed in a table
@@ -13,7 +13,6 @@ Display all startups on interactive map
 # Other requirements
   * The application is responsive
   * Must work on modern browsers
-  * Attractive
 
 # Run the application
   * npm install

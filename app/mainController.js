@@ -14,11 +14,12 @@ angular.module('founders')
     $scope.separator = $scope.separators[0].value;
 
     // To be removed -
-    // $http.get('founders.json').success(function(data) {
-    //   $scope.founders = data;
-    //   mapService.initMap();
-    //   mapService.displayAllMarkers($scope.founders);
-    // });
+    $http.get('founders.json').success(function(data) {
+      $scope.founders = data;
+      mapService.initMap();
+      mapService.displayAllMarkers($scope.founders);
+      mapService.geocodeAddress('New York');
+    });
 
     $scope.selectedSeparator = function(item) {
       $scope.separator = item.value;
@@ -32,9 +33,9 @@ angular.module('founders')
         }).then(function (resp) {
             csvFileService.readFile(resp.config.data.file, $scope.separator)
               .then(function(parsedData) {
-                $scope.founders = parsedData;
+                $scope.founderaaa = parsedData;
                   mapService.initMap();
-                  mapService.displayAllMarkers($scope.founders);
+                  // mapService.displayAllMarkers($scope.founders);
               })
               .catch(function(failedParsing) {
                 console.log('Failed file parsing:' + failedParsing);

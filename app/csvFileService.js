@@ -29,7 +29,7 @@ angular.module('founders')
               obj[headers[j]] = currentline[j];
             }
           } else {
-            for (var k=0; k<currentline.length; k++) {
+            for (var k=0; k < currentline.length; k++) {
               obj[k] = currentline[k];
             }
           }

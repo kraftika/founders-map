@@ -44,6 +44,7 @@
         </a>
       </th>
       <th>
+        <i ng-click="addMarkerColumn('city')" class="glyphicon glyphicon-map-marker"></i>
         <a href="#" ng-click="sortField = 'city'; sortReverse = !sortReverse">City
           <span>
             <i ng-show="sortField == 'city' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
@@ -52,6 +53,7 @@
         </a>
       </th>
       <th>
+        <i ng-click="addMarkerColumn('country')" class="glyphicon glyphicon-map-marker"></i>
         <a href="#" ng-click="sortField = 'country'; sortReverse = !sortReverse">Country
           <span>
             <i ng-show="sortField == 'country' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
@@ -60,6 +62,7 @@
         </a>
       </th>
       <th>
+        <i ng-click="addMarkerColumn('postalCode')" class="glyphicon glyphicon-map-marker"></i>
         <a href="#" ng-click="sortField = 'postalCode'; sortReverse = !sortReverse">Postal Code
           <span>
             <i ng-show="sortField == 'postalCode' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
@@ -68,6 +71,7 @@
         </a>
       </th>
       <th>
+        <i ng-click="addMarkerColumn('street')" class="glyphicon glyphicon-map-marker"></i>
         <a href="#" ng-click="sortField = 'street'; sortReverse = !sortReverse">Street
           <span>
             <i ng-show="sortField == 'street' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>

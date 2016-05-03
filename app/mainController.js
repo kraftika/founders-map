@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('founders')
-  .controller('mainController', ['$scope', '$http', 'Upload', '$q', 'separatorService', 'csvFileService', 'mapService',
-    function($scope, $http, Upload, $q, separatorService, csvFileService, mapService) {
+  .controller('mainController', ['$scope', '$http', 'Upload', 'separatorService', 'csvFileService', 'mapService',
+    function($scope, $http, Upload, separatorService, csvFileService, mapService) {
     /**
       table
     */
@@ -18,11 +18,22 @@ angular.module('founders')
       $scope.founders = data;
       mapService.initMap();
       mapService.displayAllMarkers($scope.founders);
-      mapService.geocodeAddress('New York');
+      // if (mapService.anyMarkerColumns) {
+      //   mapService.displayAllMarkers($scope.founders);
+      // } else {
+      //   mapService.displayAllMarkers($scope.founders);
+      // }
+
+      // mapService.displayAddress('New York');
     });
 
     $scope.selectedSeparator = function(item) {
       $scope.separator = item.value;
+    };
+
+    $scope.addMarkerColumn = function(item) {
+      mapService.addColumnAsMarker(item);
+      mapService.displayAllMarkers($scope.founders);
     };
 
     $scope.upload = function (file) {
@@ -35,7 +46,7 @@ angular.module('founders')
               .then(function(parsedData) {
                 $scope.founderaaa = parsedData;
                   mapService.initMap();
-                  // mapService.displayAllMarkers($scope.founders);
+                  // mapService.displayAllMarkersByLatLng($scope.founders);
               })
               .catch(function(failedParsing) {
                 console.log('Failed file parsing:' + failedParsing);

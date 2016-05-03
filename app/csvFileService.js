@@ -7,29 +7,31 @@ angular.module('founders')
     }
 
     function _csvToJSON(content) {
-      var lines=content.csv.split('\n');
+      var lines = content.csv.split('\n');
       var result = [];
       var start = 0;
       var columnCount = lines[0].split(content.separator).length;
 
       var headers = [];
       if (content.header) {
-        headers=lines[0].split(content.separator);
+        headers = lines[0].split(content.separator);
         start = 1;
       }
 
-      for (var i=start; i<lines.length; i++) {
+      for (var i = start; i < lines.length; i++) {
         var obj = {};
-        var currentline=lines[i].split(new RegExp(content.separator+'(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)'));
+        var currentline = lines[i].split(new RegExp(content.separator+'(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)'));
+        var temporaryLatLng;
         if ( currentline.length === columnCount ) {
           if (content.header) {
-            for (var j=0; j<headers.length; j++) {
-              // To be remove in function
+            for (var j = 0; j < headers.length; j++) {
               headers[j] = _firstToUpperCase(headers[j].replace(/^[^0-9a-zA-Z]+|[^0-9a-zA-Z_-]+/g, ''));
-              obj[headers[j]] = currentline[j];
+              temporaryLatLng = headers[j] === 'garageLatitude' || headers[j] === 'garageLongitude' ?
+                            parseFloat(currentline[j]) : currentline[j];
+              obj[headers[j]] = temporaryLatLng;
             }
           } else {
-            for (var k=0; k < currentline.length; k++) {
+            for (var k = 0; k < currentline.length; k++) {
               obj[k] = currentline[k];
             }
           }

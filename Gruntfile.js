@@ -11,7 +11,7 @@ module.exports = function(grunt) {
   });
 
   var appConfig = {
-    app: require('./bower.json').appPath || 'app',
+    app: require('./bower.json').appPath || 'src',
     dist: 'dist'
   };
 
@@ -73,30 +73,26 @@ module.exports = function(grunt) {
     watch: {
       files: [
         'Gruntfile.js',
-        'app/**',
-        'bower.json'
+        'src/app/**',
+        'src/css/**',
+        'bower.json',
+        'src/*.html'
         ],
-      tasks: ['jshint'],
-      livereload: {
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        },
-        files: [
-          '<%= founders.app %>/app/{,*/}*.js',
-          '<%= founders.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          '<%= founders.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
-      },
+      tasks: ['jshint', 'uglify', 'less'],
+      options: {
+        reload: true,
+        livereload: true,
+        livereloadOnError: true
+      }
     },
 
     connect: {
       options: {
-        hostname: 'localhost',
         port: 9000,
+        hostname: 'localhost',
         livereload: 35729
       },
-      livereload: {
+      server: {
         options: {
           open: true,
           middleware: function (connect) {
@@ -133,7 +129,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'jshint',
-    'connect:livereload',
+    'connect:server',
     'watch',
   ]);
 };

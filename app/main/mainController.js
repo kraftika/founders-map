@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('founders')
-  .controller('mainController', ['$scope', '$http', 'Upload', 'separatorService', 'csvFileService', 'mapService',
+  .controller('mainController', ['$scope', '$http', 'Upload', 'separatorService', 'fileService', 'mapService',
     function($scope, $http, Upload, separatorService, csvFileService, mapService) {
 
     $scope.sortField = 'id';
@@ -13,11 +13,11 @@ angular.module('founders')
     mapService.initMap();
 
     // To be removed when the job is done
-    $http.get('founders.json').success(function(data) {
-      $scope.founders = data;
-      mapService.initMap();
-      mapService.displayAllMarkers($scope.founders);
-    });
+    // $http.get('founders.json').success(function(data) {
+    //   $scope.founders = data;
+    //   mapService.initMap();
+    //   mapService.displayAllMarkers($scope.founders);
+    // });
 
     $scope.selectedSeparator = function(item) {
       $scope.separator = item.value;
@@ -47,7 +47,7 @@ angular.module('founders')
           csvFileService.readFile(resp.config.data.file, $scope.separator)
             .then(function(parsedData) {
               $scope.founders = parsedData;
-              // mapService.displayAllMarkers($scope.founders);
+              mapService.displayAllMarkers($scope.founders);
             })
             .catch(function(failedParsing) {
               console.log('Failed file parsing:' + failedParsing);

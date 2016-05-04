@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('founders')
-  .factory('csvFileService', ['$q', function($q) {
+  .factory('fileService', ['$q', function($q) {
     function _firstToUpperCase(str) {
       return str.substr(0, 1).toLowerCase() + str.substr(1);
     }

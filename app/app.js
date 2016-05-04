@@ -8,7 +8,7 @@ angular.module('founders', ['ui.router', 'ngFileUpload', 'ui.bootstrap'])
       $stateProvider
         .state('home', {
           url:'/',
-          templateUrl: 'main.html',
+          templateUrl: 'main/main.html',
           controller: 'mainController'
         });
 

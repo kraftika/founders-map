@@ -13,6 +13,7 @@
   "globals": {
     "angular": false,
     "google": false,
-    "map": false
+    "map": false,
+    "_": false
   }
 }

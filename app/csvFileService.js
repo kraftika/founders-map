@@ -35,6 +35,7 @@ angular.module('founders')
               obj[k] = currentline[k];
             }
           }
+          obj.visible = true;
           result.push(obj);
         }
       }

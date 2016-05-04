@@ -8,7 +8,8 @@
   "photo": "http://i.telegraph.co.uk/multimedia/archive/03335/larrygoogle_3335637b.jpg",
   "homePage": "http://google.com",
   "garageLatitude": 37.457674,
-  "garageLongitude": -122.163452
+  "garageLongitude": -122.163452,
+  "visible": true
 },
 { "id": 2,
   "companyName": "Apple",
@@ -20,7 +21,8 @@
   "photo": "http://i.dailymail.co.uk/i/pix/2013/02/08/article-2275512-172E13BB000005DC-732_634x505.jpg",
   "homePage": "http://apple.com",
   "garageLatitude": 37.3403188,
-  "garageLongitude": -122.163452
+  "garageLongitude": -122.163452,
+  "visible": true
 },
 { "id": 3,
   "companyName": "Microsoft",
@@ -32,5 +34,6 @@
   "photo": "https://media.gq.com/photos/563159ff43e3e6756cb30bea/16:9/pass/*GettyImages-551915847.jpg",
   "homePage": "http://microsoft.com",
   "garageLatitude": 37.472189,
-  "garageLongitude": -122.190191
+  "garageLongitude": -122.190191,
+  "visible": true
 }]

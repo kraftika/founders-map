@@ -12,15 +12,24 @@ angular.module('founders')
     $scope.separator = $scope.separators[0].value;
     mapService.initMap();
 
-    // To be removed -
-    // $http.get('founders.json').success(function(data) {
-    //   $scope.founders = data;
-    //   mapService.initMap();
-    //   mapService.displayAllMarkers($scope.founders);
-    // });
+    // To be removed when the job is done
+    $http.get('founders.json').success(function(data) {
+      $scope.founders = data;
+      mapService.initMap();
+      mapService.displayAllMarkers($scope.founders);
+    });
 
     $scope.selectedSeparator = function(item) {
       $scope.separator = item.value;
+    };
+
+    $scope.changeMarkerState = function(founder) {
+      founder.visible = !founder.visible;
+      if (founder.visible) {
+        mapService.showMarker(founder.id);
+      } else {
+        mapService.hideMarker(founder.id);
+      }
     };
 
     $scope.addMarkerColumn = function(item) {
@@ -38,7 +47,7 @@ angular.module('founders')
           csvFileService.readFile(resp.config.data.file, $scope.separator)
             .then(function(parsedData) {
               $scope.founders = parsedData;
-              mapService.displayAllMarkers($scope.founders);
+              // mapService.displayAllMarkers($scope.founders);
             })
             .catch(function(failedParsing) {
               console.log('Failed file parsing:' + failedParsing);

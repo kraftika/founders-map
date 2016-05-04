@@ -37,5 +37,8 @@
     "grunt-contrib-less": "~1.3.0",
     "load-grunt-tasks": "~3.5.0",
     "grunt-open": "~0.2.3"
+  },
+  "dependencies": {
+    "grunt-contrib-cssmin": "~1.0.1"
   }
 }

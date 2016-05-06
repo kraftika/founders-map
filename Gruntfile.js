@@ -49,9 +49,14 @@ module.exports = function(grunt) {
       }
     },
     less: {
-      style: {
+      dev: {
         files: {
-          '<%= founders.dist %>/css/style.css': 'less/style.less'
+          'src/css/style.css': 'src/css/style.less'
+        }
+      },
+      prod: {
+        files: {
+          '<%= founders.dist %>/css/style.css': 'src/app/css/style.less'
         }
       }
     },
@@ -78,7 +83,7 @@ module.exports = function(grunt) {
         'bower.json',
         'src/*.html'
         ],
-      tasks: ['jshint', 'uglify', 'less'],
+      tasks: ['jshint', 'uglify', 'less:dev'],
       options: {
         reload: true,
         livereload: true,
@@ -129,6 +134,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'jshint',
+    'less:dev',
     'connect:server',
     'watch',
   ]);

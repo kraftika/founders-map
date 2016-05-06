@@ -1,4 +1,5 @@
 @base-font: 16px;
+@touch-target: 16px*1.2;
 
 :root {
   font-size: @base-font;
@@ -36,6 +37,6 @@ body {
   min-height: 48px;
 }
 
-.glyphicon {
-  font-size: 1.5rem;
+.dropdown-menu > li > a {
+  padding: @touch-target;
 }

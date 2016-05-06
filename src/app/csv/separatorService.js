@@ -3,8 +3,8 @@
 angular.module('founders')
   .factory('separatorService', function() {
     function _getAllSeparators() {
-      return [{ name:',', value: ',' },
-              { name:';', value: ';'},
+      return [{ name:' , ', value: ',' },
+              { name:' ; ', value: ';'},
               { name:'tab', value: '\t'}];
     }
 

@@ -9,7 +9,8 @@ angular.module('founders')
     $scope.search = '';
 
     $scope.separators = separatorService.getAllSeparators();
-    $scope.separator = $scope.separators[0].value;
+    $scope.separator = $scope.separators[0];
+
     mapService.initMap();
 
     // To be removed when the job is done
@@ -20,7 +21,7 @@ angular.module('founders')
     // });
 
     $scope.selectedSeparator = function(item) {
-      $scope.separator = item.value;
+      $scope.separator = item;
     };
 
     $scope.changeMarkerState = function(founder) {

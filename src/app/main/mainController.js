@@ -1,8 +1,54 @@
 'use strict';
 
 angular.module('founders')
-  .controller('mainController', ['$scope', '$http', 'Upload', 'separatorService', 'fileService', 'mapService',
-    function($scope, $http, Upload, separatorService, csvFileService, mapService) {
+  .controller('mainController', ['$scope', '$http', 'Upload', 'separatorService', 'fileService', 'mapService', '$nlDrawer', '$nlFramework',
+    function($scope, $http, Upload, separatorService, csvFileService, mapService, $nlDrawer, $nlFramework) {
+
+    // Native-like Drawer is HERE! ---------------------------
+var nlOptions = {
+      // // global settings
+      // speed: 0.2,
+      // animation: 'ease',
+      // // use action button
+      // fab: true,
+      // // use toast messages
+      // toast: true,
+      // // burger specific
+      // burger: {
+      //   endY: 6,
+      //   startScale: 1, // X scale of bottom and top line of burger menu at starting point (OFF state)
+      //   endScale: 0.7 // X scale of bottom and top line of burger menu at end point (ON state)
+      // },
+      // // content specific
+      content:{
+        modify: true, // modify content width and heidht?
+        topBarHeight: 56 //topbar height to use when modify is set to true
+      },
+      // drawer specific
+      // drawer: {
+      //   maxWidth: 300,
+      //   openCb: function(){
+      //     console.log('nlDrawer: openned')
+      //   },
+      //   closeCb: function(){
+      //     console.log('nlDrawer closed')
+      //   }
+      // }
+    }
+
+    $scope.drawer = $nlFramework.drawer;
+// $nlFramework.set( nlOptions );
+$nlFramework.init( nlOptions );
+  // Done! -------------------------------------------------
+
+    $scope.showDrawer = function() {
+      $nlDrawer.show();
+    };
+
+    $scope.hideDrawer = function() {
+      $nlDrawer.hide();
+    };
+
 
     $scope.sortField = 'id';
     $scope.sortReverse  = false;

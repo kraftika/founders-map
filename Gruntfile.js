@@ -51,7 +51,7 @@ module.exports = function(grunt) {
     less: {
       dev: {
         files: {
-          'src/css/style.css': 'src/css/style.less'
+          'src/css/style.css': ['src/css/style.less', 'src/app/common/directives/burgerDirective.less']
         }
       },
       prod: {

@@ -19,9 +19,9 @@ angular.module('founders', ['ui.router', 'ngFileUpload', 'ui.bootstrap', 'snap']
           url:'/offcanvas',
           templateUrl: 'app/main/offcanvas.html'
         })
-        .state('oc', {
-          url:'/oc',
-          templateUrl: 'app/main/oc.html'
+        .state('oca', {
+          url:'/offc',
+          templateUrl: 'app/main/offc.html'
         });
 
       $httpProvider.defaults.useXDomain = true;

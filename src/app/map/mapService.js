@@ -14,7 +14,10 @@ angular.module('founders')
         zoom: 4,
         mapTypeId: google.maps.MapTypeId.TERRAIN,
         mapTypeControl: false,
-        disableDefaultUI: true
+        zoomControl: true,
+        zoomControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_TOP
+        }
       });
 
       geocoder = new google.maps.Geocoder();

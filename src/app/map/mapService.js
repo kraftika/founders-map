@@ -12,7 +12,9 @@ angular.module('founders')
       map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 42.877742, lng: -97.380979 },
         zoom: 4,
-        mapTypeId: google.maps.MapTypeId.TERRAIN
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        mapTypeControl: false,
+        disableDefaultUI: true
       });
 
       geocoder = new google.maps.Geocoder();

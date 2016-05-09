@@ -1,46 +1,6 @@
 <burger-drawer width="200">
-
-</burger-drawer>
-
-<burger-content>
-    <!-- Header -->
-  <div class="header">
-    <div class="btn-group" role="group">
-      <!-- Upload -->
-      <button type="file"
-              ngf-select="upload($file)"
-              ngf-multiple="false"
-              ngf-allow-dir="false"
-              ngf-accept="'.csv'"
-              ngf-max-height="1000"
-              ngf-max-size="1MB"
-              class="btn btn-link btn-upload">
-          Load file
-      </button>
-
-      <!-- CSV Separator -->
-      <div class="btn-group" uib-dropdown is-open="status.isospen">
-        <button id="separator-button" type="button" class="btn btn-link dropdown-toggle btn-upload" uib-dropdown-toggle ng-disabled="disabled">
-          {{separator.name}}
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="separator-button">
-          <li ng-repeat="separator in separators" role="menuitem">
-            <a ng-click="selectedSeparator(separator)" href="#">{{separator.name}} separator</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</burger-content>
-
-<!-- Map -->
-<div class="map-container">
-  <div id="map"></div>
-</div>
-
 <!-- Table with the content -->
-<!-- <div class="table-responsive">
+<div class="table-responsive">
   <table class="table table-hover">
     <thead>
       <th>
@@ -118,4 +78,42 @@
       </tr>
     </tbody>
   </table>
-</div> -->
+</div>
+</burger-drawer>
+
+<burger-content>
+    <!-- Header -->
+  <div class="header">
+    <div class="btn-group" role="group">
+      <!-- Upload -->
+      <button type="file"
+              ngf-select="upload($file)"
+              ngf-multiple="false"
+              ngf-allow-dir="false"
+              ngf-accept="'.csv'"
+              ngf-max-height="1000"
+              ngf-max-size="1MB"
+              class="btn btn-link btn-upload">
+          Load file
+      </button>
+
+      <!-- CSV Separator -->
+      <div class="btn-group" uib-dropdown is-open="status.isospen">
+        <button id="separator-button" type="button" class="btn btn-link dropdown-toggle btn-upload" uib-dropdown-toggle ng-disabled="disabled">
+          {{separator.name}}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="separator-button">
+          <li ng-repeat="separator in separators" role="menuitem">
+            <a ng-click="selectedSeparator(separator)" href="#">{{separator.name}} separator</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</burger-content>
+
+<!-- Map -->
+<div class="map-container">
+  <div id="map"></div>
+</div>

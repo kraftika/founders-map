@@ -14,11 +14,11 @@ angular.module('founders')
     mapService.initMap();
 
     // To be removed when the job is done
-    // $http.get('founders.json').success(function(data) {
-    //   $scope.founders = data;
-    //   mapService.initMap();
-    //   mapService.displayAllMarkers($scope.founders);
-    // });
+    $http.get('app/csv/founders.json').success(function(data) {
+      $scope.founders = data;
+      mapService.initMap();
+      mapService.displayAllMarkers($scope.founders);
+    });
 
     $scope.selectedSeparator = function(item) {
       $scope.separator = item;
@@ -48,7 +48,7 @@ angular.module('founders')
           csvFileService.readFile(resp.config.data.file, $scope.separator)
             .then(function(parsedData) {
               $scope.founders = parsedData;
-              mapService.displayAllMarkers($scope.founders);
+              // mapService.displayAllMarkers($scope.founders);
             })
             .catch(function(failedParsing) {
               console.log('Failed file parsing:' + failedParsing);

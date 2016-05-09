@@ -3,7 +3,7 @@ angular.module('founders')
     return {
       restrict: 'EA',
       transclude: true,
-      templateUrl: 'app/common/directives/burgerDrawerTemplate.tpl.html',
+      templateUrl: 'app/common/directives/drawerDirective/burgerDrawerTemplate.tpl.html',
       link: function() {
         var closeDrawer = document.querySelector('#closeDrawerButton');
         var drawer = document.querySelector('#drawer');

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('founders', ['ui.router', 'ngFileUpload', 'ui.bootstrap', 'snap'])
+angular.module('founders', ['ui.router', 'ngFileUpload', 'ui.bootstrap'])
   .config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
     function($stateProvider, $urlRouterProvider, $httpProvider) {
       $urlRouterProvider.otherwise('/');
@@ -10,18 +10,6 @@ angular.module('founders', ['ui.router', 'ngFileUpload', 'ui.bootstrap', 'snap']
           url:'/',
           templateUrl: 'app/main/main.html',
           controller: 'mainController'
-        })
-        .state('snap', {
-          url:'/snap',
-          templateUrl: 'app/main/snap.html'
-        })
-        .state('offcanvas', {
-          url:'/offcanvas',
-          templateUrl: 'app/main/offcanvas.html'
-        })
-        .state('oca', {
-          url:'/offc',
-          templateUrl: 'app/main/offc.html'
         });
 
       $httpProvider.defaults.useXDomain = true;

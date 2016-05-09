@@ -3,7 +3,7 @@ angular.module('founders')
     return {
       restrict: 'EA',
       transclude: true,
-      templateUrl: 'app/common/directives/burgerContentTemplate.tpl.html',
+      templateUrl: 'app/common/directives/drawerDirective/burgerContentTemplate.tpl.html',
       link: function() {
         var menu = document.querySelector('#menu');
         var main = document.querySelector('main');

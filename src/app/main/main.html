@@ -1,84 +1,84 @@
 <burger-drawer width="200">
 <!-- Table with the content -->
-<div class="table-responsive">
-  <table class="table table-hover">
-    <thead>
-      <th>
-        <a href="#" ng-click="sortField = 'id'; sortReverse = !sortReverse">Id
-          <span>
-            <i ng-show="sortField == 'id' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
-            <i ng-show="sortField == 'id' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
-          </span>
-        </a>
-      </th>
-      <th></th>
-      <th></th>
-      <th>
-        <a href="#" ng-click="sortField = 'companyName'; sortReverse = !sortReverse">Company
-          <span>
-            <i ng-show="sortField == 'companyName' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
-            <i ng-show="sortField == 'companyName' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
-          </span>
-        </a>
-      </th>
-      <th>
-        <i ng-click="addMarkerColumn('city')" class="glyphicon glyphicon-map-marker"></i>
-        <a href="#" ng-click="sortField = 'city'; sortReverse = !sortReverse">City
-          <span>
-            <i ng-show="sortField == 'city' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
-            <i ng-show="sortField == 'city' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
-          </span>
-        </a>
-      </th>
-      <th>
-        <i ng-click="addMarkerColumn('country')" class="glyphicon glyphicon-map-marker"></i>
-        <a href="#" ng-click="sortField = 'country'; sortReverse = !sortReverse">Country
-          <span>
-            <i ng-show="sortField == 'country' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
-            <i ng-show="sortField == 'country' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
-          </span>
-        </a>
-      </th>
-      <th>
-        <i ng-click="addMarkerColumn('postalCode')" class="glyphicon glyphicon-map-marker"></i>
-        <a href="#" ng-click="sortField = 'postalCode'; sortReverse = !sortReverse">Postal Code
-          <span>
-            <i ng-show="sortField == 'postalCode' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
-            <i ng-show="sortField == 'postalCode' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
-          </span>
-        </a>
-      </th>
-      <th>
-        <i ng-click="addMarkerColumn('street')" class="glyphicon glyphicon-map-marker"></i>
-        <a href="#" ng-click="sortField = 'street'; sortReverse = !sortReverse">Street
-          <span>
-            <i ng-show="sortField == 'street' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
-            <i ng-show="sortField == 'street' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
-          </span>
-        </a>
-      </th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="founder in founders | filter:search | orderBy:sortField:sortReverse">
-        <td>{{founder.id}}</td>
-        <td>
-          <i ng-show="founder.visible"
-             ng-click="changeMarkerState(founder)"
-             class="glyphicon glyphicon-eye-open"></i>
-          <i ng-show="!founder.visible"
-             ng-click="changeMarkerState(founder)"
-             class="glyphicon glyphicon-eye-close"></i>
-        </td>
-        <td><img ng-src="{{founder.photo}}" class="img-rounded" width="100" height="70"></td>
-        <td><a ng-href="{{founder.homePage}}" target="_blank">{{founder.companyName}}</a></td>
-        <td>{{founder.city}}</td>
-        <td>{{founder.country}}</td>
-        <td>{{founder.postalCode}}</td>
-        <td>{{founder.street}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <th>
+          <a href="#" ng-click="sortField = 'id'; sortReverse = !sortReverse">Id
+            <span>
+              <i ng-show="sortField == 'id' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+              <i ng-show="sortField == 'id' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+          </a>
+        </th>
+        <th></th>
+        <th></th>
+        <th>
+          <a href="#" ng-click="sortField = 'companyName'; sortReverse = !sortReverse">Company
+            <span>
+              <i ng-show="sortField == 'companyName' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+              <i ng-show="sortField == 'companyName' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+          </a>
+        </th>
+        <th>
+          <i ng-click="addMarkerColumn('city')" class="glyphicon glyphicon-map-marker"></i>
+          <a href="#" ng-click="sortField = 'city'; sortReverse = !sortReverse">City
+            <span>
+              <i ng-show="sortField == 'city' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+              <i ng-show="sortField == 'city' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+          </a>
+        </th>
+        <th>
+          <i ng-click="addMarkerColumn('country')" class="glyphicon glyphicon-map-marker"></i>
+          <a href="#" ng-click="sortField = 'country'; sortReverse = !sortReverse">Country
+            <span>
+              <i ng-show="sortField == 'country' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+              <i ng-show="sortField == 'country' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+          </a>
+        </th>
+        <th>
+          <i ng-click="addMarkerColumn('postalCode')" class="glyphicon glyphicon-map-marker"></i>
+          <a href="#" ng-click="sortField = 'postalCode'; sortReverse = !sortReverse">Postal Code
+            <span>
+              <i ng-show="sortField == 'postalCode' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+              <i ng-show="sortField == 'postalCode' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+          </a>
+        </th>
+        <th>
+          <i ng-click="addMarkerColumn('street')" class="glyphicon glyphicon-map-marker"></i>
+          <a href="#" ng-click="sortField = 'street'; sortReverse = !sortReverse">Street
+            <span>
+              <i ng-show="sortField == 'street' && !sortReverse" class="glyphicon glyphicon-chevron-up"></i>
+              <i ng-show="sortField == 'street' && sortReverse" class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+          </a>
+        </th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="founder in founders | filter:search | orderBy:sortField:sortReverse">
+          <td>{{founder.id}}</td>
+          <td>
+            <i ng-show="founder.visible"
+               ng-click="changeMarkerState(founder)"
+               class="glyphicon glyphicon-eye-open"></i>
+            <i ng-show="!founder.visible"
+               ng-click="changeMarkerState(founder)"
+               class="glyphicon glyphicon-eye-close"></i>
+          </td>
+          <td><img ng-src="{{founder.photo}}" class="img-rounded" width="100" height="70"></td>
+          <td><a ng-href="{{founder.homePage}}" target="_blank">{{founder.companyName}}</a></td>
+          <td>{{founder.city}}</td>
+          <td>{{founder.country}}</td>
+          <td>{{founder.postalCode}}</td>
+          <td>{{founder.street}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </burger-drawer>
 
 <burger-content>

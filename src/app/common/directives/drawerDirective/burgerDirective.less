@@ -1,17 +1,22 @@
 @width-Drawer: 350px;
 @base-size: 16px;
+@smartphones: ~"only screen and (max-width: 450px)";
 
 a {
-  min-width: 48px;
-  min-height: 48px;
+  @media @smartphones {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0.4em;
+  }
   font-size: 1.6*@base-size;
   color: #ffffff;
-   padding: 0.4em;
 }
 
 nav, main {
-  padding: 0.4em;
-  box-sizing: border-box;
+  @media @smartphones {
+    padding: 0.4em;
+    box-sizing: border-box;
+  }
 }
 
 main {
@@ -20,30 +25,38 @@ main {
 }
 
 nav {
-  width: @width-Drawer;
-  height: 100%;
-  position: absolute;
-  -webkit-transform: translate(-@width-Drawer, 0);
-  transform: translate(-@width-Drawer, 0);
-  transition: transform 0.3s ease;
-  padding: 1.2rem
+  @media @smartphones {
+    width: @width-Drawer;
+    height: 100%;
+    position: absolute;
+    -webkit-transform: translate(-@width-Drawer, 0);
+    transform: translate(-@width-Drawer, 0);
+    transition: transform 0.3s ease;
+    padding: 1.2rem
+  }
 }
 
 nav.open {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+  @media @smartphones {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
 }
 
 .up-drawer {
-  background-color: #69b55e;
-  color: #efefef;
-  z-index: 2;
+  @media @smartphones {
+    background-color: #339a25;
+    color: #efefef;
+    z-index: 2;
+  }
 }
 
 .down-drawer {
-  display: flex;
-  background-color: #69b55e;
-  border-bottom: 2px solid #1e8fc5;
+  @media @smartphones {
+    display: flex;
+    border-bottom: 2px solid #1e8fc5;
+    background-color: #69b55e;
+  }
 }
 
 .button-drawer {

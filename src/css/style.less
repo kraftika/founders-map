@@ -21,11 +21,28 @@ body {
 }
 
 .map-container {
-  top: 10px;
-  left: 12px;
-  // position: relative;
-  width: 100%;
+  width: 50%;
   height: 100%;
+  background-color: green;
+  // order: 1;
+}
+
+.table-container {
+  width: 50%;
+  height: 100%;
+  background-color: orange;
+
+  @media @smartphones {
+    width: 100%;
+    height: 50%;
+    // order: 2;
+  }
+
+  @media @tablets {
+    width: 100%;
+    height: 50%;
+    // order: 2;
+  }
 }
 
 #map {
@@ -45,15 +62,9 @@ body {
 }
 
 .header {
-  position: relative;
   border: 1px solid red;
   padding: 1.2rem;
   width: 100%;
-}
-
-.table-container {
-  width: 100%;
-  height: 50%;
 }
 
 .btn-upload {

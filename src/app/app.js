@@ -10,6 +10,10 @@ angular.module('founders', ['ui.router', 'ngFileUpload', 'ui.bootstrap'])
           url:'/',
           templateUrl: 'app/main/main2.html',
           controller: 'mainController'
+        })
+        .state('fluid', {
+          url:'/fluid',
+          templateUrl: 'app/main/fluid.html'
         });
 
       $httpProvider.defaults.useXDomain = true;

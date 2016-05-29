@@ -53,7 +53,7 @@ angular.module('founders')
            var content = {
             csv: reader.result,
             header: true,
-            separator: separator,
+            separator: separator.value,
             result: null,
             encoding: 'ISO-8859-1'
           };

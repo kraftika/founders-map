@@ -36,4 +36,17 @@
   "garageLatitude": 37.472189,
   "garageLongitude": -122.190191,
   "visible": true
+},
+{ "id": 4,
+  "companyName": "Microsoft",
+  "founder": "Bill Gates",
+  "city": "New York",
+  "country": "USA",
+  "postalCode": "WA 98052-7329",
+  "street": "One Microsoft Way",
+  "photo": "https://media.gq.com/photos/563159ff43e3e6756cb30bea/16:9/pass/*GettyImages-551915847.jpg",
+  "homePage": "http://microsoft.com",
+  "garageLatitude": 37.472189,
+  "garageLongitude": -122.190191,
+  "visible": true
 }]

@@ -36,6 +36,8 @@ angular.module('founders')
     $scope.addMarkerColumn = function(item) {
       mapService.addColumnAsMarker(item);
       mapService.displayAllMarkers($scope.founders);
+      $scope.columnMarker = item === 'postalCode' ? 'postal code' : item;
+      $scope.showAlert = true;
     };
 
     $scope.upload = function (file) {
@@ -56,4 +58,11 @@ angular.module('founders')
         });
       }
     };
+
+    $scope.showAlert = true;
+    $scope.columnMarker = "latitude and longitude"; 
+
+    $scope.closeAlert = function() {
+      $scope.showAlert = false;
+    }
 }]);
